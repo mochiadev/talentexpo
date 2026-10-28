@@ -1,0 +1,18 @@
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local tooling / secrets
+.claude/
+.env
+.env.*
+
+# Future build tooling (site currently uses CDNs)
+node_modules/
+dist/

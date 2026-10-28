@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talent Exposure Multimedia | Premier Talent, Marketing & Media Agency Ghana</title>
+    <meta name="description" content="Talent Exposure Multimedia is Ghana's premier talent incubator, marketing powerhouse, and tour promoter in Accra — discovering, showcasing, and elevating creatives in music, fashion, film, lifestyle, and corporate branding.">
+
+    <!-- Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Talent Exposure Multimedia | Premier Talent, Marketing & Media Agency Ghana">
+    <meta property="og:description" content="Empowering the next generation of creative genius. Talent discovery, 360° marketing, media buying, and tour promotion from Accra, Ghana.">
+    <meta property="og:image" content="public/logo.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Talent Exposure Multimedia">
+    <meta name="twitter:description" content="Empowering the next generation of creative genius from Accra, Ghana.">
+    <meta name="twitter:image" content="public/logo.png">
+
+    <!-- Brand Icons -->
+    <link rel="icon" type="image/png" href="public/logo.png">
+    <link rel="apple-touch-icon" href="public/logo.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Plus Jakarta Sans & Inter + Brand Wordmark) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        canvasBg: '#F8F9FA',
+                        surfaceWhite: '#FFFFFF',
+                        textMain: '#111315',
+                        textMuted: '#525B67',
+                        flameOrange: '#E05A36',
+                        flameHover: '#C84826',
+                        slateNavy: '#2B3A4A',
+                        slateHover: '#1E2A37',
+                        softBorder: '#E2E8F0',
+                        warmCream: '#FFFDF9',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                        wordmark: ['Anton', 'Oswald', 'sans-serif'],
+                        tagline: ['Quicksand', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 30px -5px rgba(17, 19, 21, 0.05)',
+                        'lift': '0 20px 40px -15px rgba(224, 90, 54, 0.15)',
+                        'card': '0 4px 20px rgba(0, 0, 0, 0.03)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8F9FA;
+            color: #111315;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .glass-header {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .flame-gradient-text {
+            background: linear-gradient(135deg, #E05A36 0%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .flame-btn-primary {
+            background: linear-gradient(135deg, #E05A36 0%, #D94821 100%);
+            color: #FFFFFF;
+            font-weight: 700;
+            box-shadow: 0 4px 18px rgba(224, 90, 54, 0.28);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .flame-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(224, 90, 54, 0.4);
+        }
+
+        .navy-btn {
+            background: #2B3A4A;
+            color: #FFFFFF;
+            transition: all 0.3s ease;
+        }
+
+        .navy-btn:hover {
+            background: #1E2A37;
+            transform: translateY(-2px);
+        }
+
+        .card-elevated {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 20px rgba(17, 19, 21, 0.04);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card-elevated:hover {
+            transform: translateY(-4px);
+            border-color: rgba(224, 90, 54, 0.4);
+            box-shadow: 0 20px 35px -10px rgba(17, 19, 21, 0.08);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8F9FA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E05A36;
+        }
+
+        /* Creative Motion Custom Classes */
+        [data-aos="hero-float"] {
+            transform: translateY(20px) rotate(-1deg);
+            opacity: 0;
+            transition-property: transform, opacity;
+        }
+        [data-aos="hero-float"].aos-animate {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+
+        .floating-badge {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+    </style>
+</head>
+<body class="relative min-h-screen">
+
+    <!-- Subtle Background Ambient Accents -->
+    <div class="fixed top-0 right-0 w-[500px] h-[500px] bg-amber-100/60 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-10 left-0 w-[500px] h-[500px] bg-orange-100/50 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+
+    <!-- Sticky Header Navigation -->
+    <header class="sticky top-0 z-40 w-full glass-header border-b border-softBorder px-4 lg:px-8 py-3.5 transition-all">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            
+            <!-- Brand Logo Visual (Emblem + Wordmark) -->
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- Official Emblem -->
+                <img src="public/logo.png" alt="Talent Exposure Multimedia logo" width="582" height="428" decoding="async" class="h-10 sm:h-11 w-auto object-contain shrink-0 transition-transform group-hover:scale-105">
+
+                <!-- Wordmark Text -->
+                <div class="flex flex-col">
+                    <span class="font-wordmark uppercase text-base sm:text-lg tracking-tight text-textMain leading-none">
+                        TALENT EXPOSURE
+                    </span>
+                    <span class="font-tagline font-semibold uppercase text-[10px] sm:text-[11px] tracking-[0.38em] text-flameOrange leading-none mt-1.5">
+                        MULTIMEDIA
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-7 text-xs font-bold uppercase tracking-wider text-textMuted">
+                <a href="#about" class="hover:text-flameOrange transition-colors">About & Vision</a>
+                <a href="#hub" class="hover:text-flameOrange transition-colors">Talent Hub</a>
+                <a href="#services" class="hover:text-flameOrange transition-colors">Agency Services</a>
+                <a href="#events" class="hover:text-flameOrange transition-colors">Events & Projects</a>
+                <a href="#contact" class="hover:text-flameOrange transition-colors">Contact</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <a href="#contact" onclick="switchTab('brand')" class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider navy-btn shadow-sm">
+                    Partner / Hire Us
+                </a>
+                <a href="https://wa.me/233556603119?text=Hello%20Talent%20Exposure%20Multimedia,%20I%20would%20like%20to%20discuss%20a%20project%20or%20partnership." target="_blank" class="flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200 hover:bg-emerald-600 hover:text-white transition-all shadow-sm" title="Chat on WhatsApp">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-white border border-softBorder text-textMain">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden pt-4 pb-3 px-2 border-t border-softBorder mt-3 space-y-2">
+            <a href="#about" class="mobile-nav-link block px-4 py-2 rounded-lg text-sm font-medium text-textMain hover:bg-gray-100">About & Vision</a>
+            <a href="#hub" class="mobile-nav-link block px-4 py-2 rounded-lg text-sm font-medium text-textMain hover:bg-gray-100">Talent Hub</a>
+            <a href="#services" class="mobile-nav-link block px-4 py-2 rounded-lg text-sm font-medium text-textMain hover:bg-gray-100">Agency Services</a>
+            <a href="#events" class="mobile-nav-link block px-4 py-2 rounded-lg text-sm font-medium text-textMain hover:bg-gray-100">Events & Initiatives</a>
+            <a href="#contact" class="mobile-nav-link block px-4 py-2 rounded-lg text-sm font-bold text-flameOrange hover:bg-orange-50">Submit Application / Project</a>
+        </div>
+    </header>
+
+    <!-- Main Page Container -->
+    <main class="max-w-7xl mx-auto px-4 lg:px-8 space-y-20 lg:space-y-28 pt-8 lg:pt-14 overflow-hidden">
+
+        <!-- HERO SECTION -->
+        <section class="relative pt-4 pb-10 lg:py-16 grid lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Hero Copy -->
+            <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
+                <!-- RGD Credential Badge -->
+                <div data-aos="fade-down" data-aos-duration="800" class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-orange-50 border border-orange-200/60 text-xs font-bold text-flameOrange shadow-sm floating-badge">
+                    <span class="w-2 h-2 rounded-full bg-flameOrange animate-pulse"></span>
+                    <span>Registered with Registrar General's Department (RGD)</span>
+                </div>
+
+                <h1 data-aos="fade-up" data-aos-duration="900" data-aos-delay="150" class="font-heading font-black text-3xl sm:text-5xl lg:text-6xl text-textMain tracking-tight leading-[1.1]">
+                    Empowering the Next Generation of <span class="flame-gradient-text block mt-1">Creative Genius</span>
+                </h1>
+
+                <p data-aos="fade-up" data-aos-duration="900" data-aos-delay="300" class="text-base sm:text-lg text-textMuted max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                    Ghana’s premier talent incubator, marketing powerhouse, and tour promoter. We discover, showcase, and elevate the untapped, overlooked, and high-promising talents in music, fashion, film, lifestyle, and corporate branding to local and global stages.
+                </p>
+
+                <!-- Dual Primary CTAs -->
+                <div data-aos="fade-up" data-aos-duration="900" data-aos-delay="450" class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#contact" onclick="switchTab('talent')" class="w-full sm:w-auto px-8 py-4 rounded-xl text-center font-bold text-xs uppercase tracking-wider flame-btn-primary flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-sparkles"></i>
+                        <span>Get Discovered & Promoted</span>
+                    </a>
+                    <a href="#contact" onclick="switchTab('brand')" class="w-full sm:w-auto px-8 py-4 rounded-xl text-center font-bold text-xs uppercase tracking-wider navy-btn py-4 flex items-center justify-center gap-3 shadow-md">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span>Book Talent & Services</span>
+                    </a>
+                </div>
+
+                <!-- Credibility Stats Strip -->
+                <div data-aos="fade-up" data-aos-duration="900" data-aos-delay="600" class="pt-8 border-t border-softBorder grid grid-cols-3 gap-6 max-w-lg mx-auto lg:mx-0">
+                    <div>
+                        <span class="font-heading font-black text-2xl sm:text-3xl text-textMain block">10+</span>
+                        <span class="text-xs font-medium text-textMuted">Creative Sectors</span>
+                    </div>
+                    <div>
+                        <span class="font-heading font-black text-2xl sm:text-3xl text-flameOrange block">Global</span>
+                        <span class="text-xs font-medium text-textMuted">Audience & Reach</span>
+                    </div>
+                    <div>
+                        <span class="font-heading font-black text-2xl sm:text-3xl text-slateNavy block">360°</span>
+                        <span class="text-xs font-medium text-textMuted">Media & PR Support</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Hero Card / Visual Showcase -->
+            <div class="lg:col-span-5" data-aos="hero-float" data-aos-duration="1100" data-aos-delay="300">
+                <div class="relative mx-auto max-w-md lg:max-w-none card-elevated p-5 rounded-3xl bg-white border border-softBorder shadow-soft">
+                    
+                    <!-- Main Hero Image Frame -->
+                    <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gray-100 group">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Talent Exposure Media" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slateNavy/80 via-transparent to-transparent"></div>
+
+                        <!-- Top Floating Category Tag -->
+                        <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-softBorder text-xs font-bold text-textMain flex items-center gap-2 shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <span>Auditions & Casting Active</span>
+                        </div>
+
+                        <!-- Bottom Card Overlay Text -->
+                        <div class="absolute bottom-4 left-4 right-4 p-4 bg-white/95 backdrop-blur-md rounded-xl border border-softBorder space-y-1 shadow-md">
+                            <span class="text-[10px] font-extrabold text-flameOrange uppercase tracking-widest block">Multimedia Movement</span>
+                            <h3 class="font-heading font-bold text-textMain text-base">Fashion, Music, Film & Tourism</h3>
+                            <p class="text-xs text-textMuted">Unlocking potential for home-grown heroes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT & MISSION SECTION -->
+        <section id="about" class="scroll-mt-24 space-y-12">
+            <div class="text-center max-w-3xl mx-auto space-y-3" data-aos="fade-up" data-aos-duration="800">
+                <span class="text-xs font-extrabold text-flameOrange uppercase tracking-widest">Our Vision & Core Identity</span>
+                <h2 class="font-heading font-black text-3xl sm:text-4xl text-textMain">Promoting the Overlooked & Untapped</h2>
+                <p class="text-textMuted text-sm sm:text-base leading-relaxed">
+                    Talent Exposure Multimedia is dedicated to encouraging local communities to support home-grown heroes while giving rising stars the international visibility they deserve.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="card-elevated p-8 rounded-2xl space-y-4 relative overflow-hidden group" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center text-flameOrange text-xl">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-textMain">Talent Discovery & Search</h3>
+                    <p class="text-sm text-textMuted leading-relaxed">
+                        Unearthing fresh talents in music, acting, modeling, fashion design, and lifestyle. We create platforms for artists who deserve to be recognized.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="card-elevated p-8 rounded-2xl space-y-4 relative overflow-hidden group" data-aos="zoom-in-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slateNavy text-xl">
+                        <i class="fa-solid fa-rectangle-ad"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-textMain">360° Marketing & Media Buying</h3>
+                    <p class="text-sm text-textMuted leading-relaxed">
+                        Executing viral social media campaigns, public relations, press releases, media planning, and targeted direct-response lead generation.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="card-elevated p-8 rounded-2xl space-y-4 relative overflow-hidden group" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 text-xl">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-textMain">Tourism & Tour Promotion</h3>
+                    <p class="text-sm text-textMuted leading-relaxed">
+                        Organizing high-impact cultural initiatives, kids tourism clubs, regional heritage events, and international tour promotions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DUAL PATHWAYS SECTION (Interactive Segmented Control) -->
+        <section id="hub" class="scroll-mt-24 space-y-10 bg-warmCream p-6 sm:p-10 rounded-3xl border border-orange-100 shadow-sm" data-aos="fade-up" data-aos-duration="900">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-xs font-extrabold text-flameOrange uppercase tracking-widest">Tailored Engagement</span>
+                <h2 class="font-heading font-black text-2xl sm:text-4xl text-textMain">Choose Your Pathway</h2>
+                <p class="text-textMuted text-sm">Whether you are an aspiring creative or a corporate brand, we have structured programs built for your goals.</p>
+            </div>
+
+            <!-- Segmented Control Buttons -->
+            <div class="flex p-1.5 rounded-2xl bg-white border border-softBorder max-w-md mx-auto shadow-sm">
+                <button id="path-talent-btn" onclick="togglePathway('talent')" class="flex-1 py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 flame-btn-primary">
+                    <i class="fa-solid fa-user-astronaut"></i>
+                    <span>For Aspiring Talent</span>
+                </button>
+                <button id="path-brand-btn" onclick="togglePathway('brand')" class="flex-1 py-3 px-4 rounded-lg font-semibold text-xs text-textMuted hover:text-textMain uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-building-user"></i>
+                    <span>For Brands & Partners</span>
+                </button>
+            </div>
+
+            <!-- Content Panel 1: For Talent -->
+            <div id="pathway-talent-content" class="grid lg:grid-cols-2 gap-8 items-center pt-4">
+                <div class="space-y-6">
+                    <span class="text-xs font-bold text-flameOrange uppercase tracking-wider">Talent Incubator & Representation</span>
+                    <h3 class="font-heading font-bold text-2xl text-textMain">Ready to Take Center Stage?</h3>
+                    <p class="text-sm text-textMuted leading-relaxed">
+                        We represent promising actors, musicians, fashion designers, models, and performers. Our team provides audition coordination, casting, social media exposure, and direct booking opportunities.
+                    </p>
+                    <ul class="space-y-3 text-xs sm:text-sm font-semibold text-textMain">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-flameOrange"></i>
+                            <span>Audition notice alerts and casting call selection</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-flameOrange"></i>
+                            <span>Viral social media marketing & profile cultivation</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-flameOrange"></i>
+                            <span>Talent management & booking representation</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" onclick="switchTab('talent')" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-flameOrange hover:underline pt-2">
+                        <span>Submit Your Talent Profile</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="card-elevated p-4 rounded-xl text-center space-y-2">
+                        <i class="fa-solid fa-music text-2xl text-flameOrange"></i>
+                        <h4 class="font-bold text-xs text-textMain">Music & Recording</h4>
+                    </div>
+                    <div class="card-elevated p-4 rounded-xl text-center space-y-2">
+                        <i class="fa-solid fa-shirt text-2xl text-slateNavy"></i>
+                        <h4 class="font-bold text-xs text-textMain">Fashion & Modeling</h4>
+                    </div>
+                    <div class="card-elevated p-4 rounded-xl text-center space-y-2">
+                        <i class="fa-solid fa-film text-2xl text-amber-600"></i>
+                        <h4 class="font-bold text-xs text-textMain">Film & Acting</h4>
+                    </div>
+                    <div class="card-elevated p-4 rounded-xl text-center space-y-2">
+                        <i class="fa-solid fa-wand-magic-sparkles text-2xl text-emerald-600"></i>
+                        <h4 class="font-bold text-xs text-textMain">Beauty & Lifestyle</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Panel 2: For Brands (Hidden by Default) -->
+            <div id="pathway-brand-content" class="hidden grid lg:grid-cols-2 gap-8 items-center pt-4">
+                <div class="space-y-6">
+                    <span class="text-xs font-bold text-slateNavy uppercase tracking-wider">Corporate & Agency Services</span>
+                    <h3 class="font-heading font-bold text-2xl text-textMain">Elevate Your Brand & Events</h3>
+                    <p class="text-sm text-textMuted leading-relaxed">
+                        Partner with Talent Exposure Multimedia for your marketing campaigns, talent bookings, event organization, PR coverage, and media buying. We deliver measurable audience engagement.
+                    </p>
+                    <ul class="space-y-3 text-xs sm:text-sm font-semibold text-textMain">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-slateNavy"></i>
+                            <span>Turnkey event planning, management & photography</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-slateNavy"></i>
+                            <span>Direct access to vetted hosts, models, and performers</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-slateNavy"></i>
+                            <span>Targeted advertising & prospect cultivation</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" onclick="switchTab('brand')" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slateNavy hover:underline pt-2">
+                        <span>Request Corporate Proposal</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="card-elevated p-6 rounded-2xl bg-white border border-softBorder space-y-4">
+                    <h4 class="font-heading font-bold text-base text-textMain border-b border-softBorder pb-3">Agency Service Suite</h4>
+                    <div class="space-y-3 text-xs text-textMuted">
+                        <p>✓ Event Planning & Coverage</p>
+                        <p>✓ Media Buying & PR Strategy</p>
+                        <p>✓ Talent Booking & Selection</p>
+                        <p>✓ Tour Promotion & Marketing</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES MATRIX SECTION -->
+        <section id="services" class="scroll-mt-24 space-y-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-softBorder pb-6" data-aos="fade-up" data-aos-duration="800">
+                <div>
+                    <span class="text-xs font-extrabold text-flameOrange uppercase tracking-widest">Our Capabilities</span>
+                    <h2 class="font-heading font-black text-2xl sm:text-4xl text-textMain mt-1">Full-Service Matrix</h2>
+                </div>
+                <p class="text-xs text-textMuted max-w-md">Registered solutions tailored for artists, entrepreneurs, event organizers, and corporate brands across West Africa and worldwide.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="card-elevated p-7 rounded-2xl space-y-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="flex items-center justify-between text-flameOrange">
+                        <i class="fa-solid fa-id-card text-2xl"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-orange-50 px-2.5 py-1 rounded-md border border-orange-200">Talent</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-textMain">Casting & Talent Search</h3>
+                    <p class="text-xs text-textMuted leading-relaxed">Professional auditioning, talent selection, booking, and exclusive management representation.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="card-elevated p-7 rounded-2xl space-y-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="flex items-center justify-between text-slateNavy">
+                        <i class="fa-solid fa-bullseye text-2xl"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200">Marketing</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-textMain">Viral Social Media Marketing</h3>
+                    <p class="text-xs text-textMuted leading-relaxed">Direct-response online advertising, lead generation, social media management, and viral campaigns.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="card-elevated p-7 rounded-2xl space-y-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="flex items-center justify-between text-amber-600">
+                        <i class="fa-solid fa-calendar-star text-2xl"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200">Events</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-textMain">Event Organization & Coverage</h3>
+                    <p class="text-xs text-textMuted leading-relaxed">Turnkey event management, coordination services, photography, and high-impact media promotion.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="card-elevated p-7 rounded-2xl space-y-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="flex items-center justify-between text-flameOrange">
+                        <i class="fa-solid fa-compass-drafting text-2xl"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-orange-50 px-2.5 py-1 rounded-md border border-orange-200">Media</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-textMain">Media Buying & PR Consulting</h3>
+                    <p class="text-xs text-textMuted leading-relaxed">Media planning, public relations, press distribution, and prospect cultivation strategies.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="card-elevated p-7 rounded-2xl space-y-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="flex items-center justify-between text-slateNavy">
+                        <i class="fa-solid fa-route text-2xl"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200">Tourism</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-textMain">Tour Promotion & Cultural Programs</h3>
+                    <p class="text-xs text-textMuted leading-relaxed">Promoting destination experiences, kids tourism clubs, and cultural arts preservation tours.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="card-elevated p-7 rounded-2xl space-y-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="flex items-center justify-between text-emerald-600">
+                        <i class="fa-solid fa-handshake text-2xl"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">Partnership</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-textMain">Joint Ventures & Sponsorships</h3>
+                    <p class="text-xs text-textMuted leading-relaxed">Structuring brand partnerships, investor matchings, and community award sponsorships.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- UPCOMING EVENTS & INITIATIVES -->
+        <section id="events" class="scroll-mt-24 space-y-10">
+            <div class="text-center max-w-3xl mx-auto space-y-3" data-aos="fade-up" data-aos-duration="800">
+                <span class="text-xs font-extrabold text-flameOrange uppercase tracking-widest">Key Flagship Projects</span>
+                <h2 class="font-heading font-black text-2xl sm:text-4xl text-textMain">Upcoming Events & Initiatives</h2>
+                <p class="text-textMuted text-sm">Explore our active community campaigns and award ceremonies. Tap any card to register or partner via WhatsApp.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Event 1 -->
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100" onclick="openFlyerModal('Albion Mends I Memorial Foundation', 'Official launch celebration, birthday and death anniversary memorial honoring historical heritage.', 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80')" class="cursor-pointer card-elevated rounded-2xl overflow-hidden group">
+                    <div class="relative aspect-[4/5] bg-gray-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Albion Mends Foundation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-textMain via-textMain/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 space-y-1.5 text-white">
+                            <span class="text-[10px] font-bold text-amber-300 uppercase tracking-wider">Foundation & Heritage</span>
+                            <h3 class="font-heading font-bold text-lg group-hover:text-amber-300 transition-colors">Albion Mends I Memorial Foundation</h3>
+                            <p class="text-xs text-gray-200 line-clamp-2">Memorial Day, birthday & death anniversary celebrations and community foundation launch.</p>
+                            <div class="pt-2 flex items-center text-xs font-bold text-amber-300 gap-1">
+                                <span>Register / Support</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" onclick="openFlyerModal('Special Recognition Awards', 'Citation for outstanding service to society award recipients. Seeking sponsors, partners, and investors.', 'https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80')" class="cursor-pointer card-elevated rounded-2xl overflow-hidden group">
+                    <div class="relative aspect-[4/5] bg-gray-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80" alt="Special Recognition Awards" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-textMain via-textMain/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 space-y-1.5 text-white">
+                            <span class="text-[10px] font-bold text-amber-300 uppercase tracking-wider">Awards & Honor</span>
+                            <h3 class="font-heading font-bold text-lg group-hover:text-amber-300 transition-colors">Special Recognition Awards</h3>
+                            <p class="text-xs text-gray-200 line-clamp-2">Citations for outstanding service to society. Open call for sponsors, partners, and media partners.</p>
+                            <div class="pt-2 flex items-center text-xs font-bold text-amber-300 gap-1">
+                                <span>Sponsor Event</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300" onclick="openFlyerModal('Korle Klottey Tourism & Kids Club', 'Promoting community tourism, youth empowerment, and cultural arts engagement in Accra.', 'public/kids.jpeg')" class="cursor-pointer card-elevated rounded-2xl overflow-hidden group">
+                    <div class="relative aspect-[4/5] bg-gray-100 overflow-hidden">
+                        <img src="public/kids.jpeg" alt="Kids in Tourism club members at a community cleanup event" width="1080" height="809" loading="lazy" decoding="async" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-textMain via-textMain/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 space-y-1.5 text-white">
+                            <span class="text-[10px] font-bold text-amber-300 uppercase tracking-wider">Youth & Tourism</span>
+                            <h3 class="font-heading font-bold text-lg group-hover:text-amber-300 transition-colors">Korle Klottey Tourism & Kids Club</h3>
+                            <p class="text-xs text-gray-200 line-clamp-2">Youth mobilization, local heritage discovery tours, and youth engagement programs.</p>
+                            <div class="pt-2 flex items-center text-xs font-bold text-amber-300 gap-1">
+                                <span>Join Initiative</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE WHATSAPP INTEGRATION FORM -->
+        <section id="contact" class="scroll-mt-24 max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="900">
+            <div class="card-elevated p-6 sm:p-12 rounded-3xl bg-white border border-softBorder shadow-soft relative overflow-hidden">
+                
+                <div class="text-center space-y-3 mb-8">
+                    <span class="text-xs font-extrabold text-flameOrange uppercase tracking-widest">Instant Communication Portal</span>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl text-textMain">Submit Your Project or Profile</h2>
+                    <p class="text-xs sm:text-sm text-textMuted">Fill out the details below. Our automated system will structure your application and trigger a direct WhatsApp session.</p>
+                </div>
+
+                <!-- Form Type Selector Tabs -->
+                <div class="flex p-1.5 rounded-xl bg-gray-100 mb-8 border border-softBorder max-w-md mx-auto">
+                    <button id="tab-talent" onclick="switchTab('talent')" class="flex-1 py-3 px-4 rounded-lg font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 flame-btn-primary">
+                        <i class="fa-solid fa-user-astronaut"></i>
+                        <span>Emerging Creative</span>
+                    </button>
+                    <button id="tab-brand" onclick="switchTab('brand')" class="flex-1 py-3 px-4 rounded-lg font-semibold text-xs text-textMuted hover:text-textMain uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span>Corporate / Partner</span>
+                    </button>
+                </div>
+
+                <!-- Form Element -->
+                <form id="whatsapp-lead-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <input type="hidden" id="user-type" value="talent">
+
+                    <!-- Basic Info -->
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-textMain block" id="label-name">Full Name / Stage Name *</label>
+                            <input type="text" id="input-name" required placeholder="e.g. Daniel Mends" class="w-full bg-gray-50 border border-softBorder rounded-xl px-4 py-3 text-sm text-textMain focus:outline-none focus:border-flameOrange focus:bg-white transition-all">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-textMain block">Phone / WhatsApp Number *</label>
+                            <input type="tel" id="input-phone" required placeholder="e.g. 055 660 3119" class="w-full bg-gray-50 border border-softBorder rounded-xl px-4 py-3 text-sm text-textMain focus:outline-none focus:border-flameOrange focus:bg-white transition-all">
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Talent Fields -->
+                    <div id="dynamic-talent-fields" class="grid sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-textMain block">Primary Creative Field *</label>
+                            <select id="input-category" class="w-full bg-gray-50 border border-softBorder rounded-xl px-4 py-3 text-sm text-textMain focus:outline-none focus:border-flameOrange focus:bg-white transition-all">
+                                <option value="Music / Artist / Recording">Music & Recording Artistry</option>
+                                <option value="Fashion / Modeling / Designer">Fashion, Modeling & Design</option>
+                                <option value="Film / Acting / Video Production">Film, Acting & Scriptwriting</option>
+                                <option value="Beauty / Makeup / Style">Beauty & Makeup Artistry</option>
+                                <option value="Dance & Performing Arts">Dance & Performing Arts</option>
+                                <option value="MC / Event Hosting / Media">MC & Media Personality</option>
+                                <option value="Other Creative Talent">Other Creative Skill</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-textMain block">Social Media / Portfolio Link (Optional)</label>
+                            <input type="text" id="input-portfolio" placeholder="e.g. Instagram handle, YouTube link" class="w-full bg-gray-50 border border-softBorder rounded-xl px-4 py-3 text-sm text-textMain focus:outline-none focus:border-flameOrange focus:bg-white transition-all">
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Brand Fields (Hidden by default) -->
+                    <div id="dynamic-brand-fields" class="hidden grid sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-textMain block">Company / Organization Name *</label>
+                            <input type="text" id="input-company" placeholder="e.g. Brand Name Ltd" class="w-full bg-gray-50 border border-softBorder rounded-xl px-4 py-3 text-sm text-textMain focus:outline-none focus:border-flameOrange focus:bg-white transition-all">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-textMain block">Required Service *</label>
+                            <select id="input-service-req" class="w-full bg-gray-50 border border-softBorder rounded-xl px-4 py-3 text-sm text-textMain focus:outline-none focus:border-flameOrange focus:bg-white transition-all">
+                                <option value="Event Planning & Management">Event Planning & Management</option>
+                                <option value="Talent Booking & Selection">Talent Booking & Selection</option>
+                                <option value="Viral Marketing & PR Strategy">Viral Marketing & PR Strategy</option>
+                                <option value="Tour Promotion & Cultural Events">Tour Promotion & Cultural Events</option>
+                                <option value="Event Sponsorship & Joint Venture">Event Sponsorship & Joint Venture</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-textMain block">Location / City *</label>
+                        <input type="text" id="input-location" required placeholder="e.g. Accra, Adjabeng, Kumasi, Diaspora" class="w-full bg-gray-50 border border-softBorder rounded-xl px-4 py-3 text-sm text-textMain focus:outline-none focus:border-flameOrange focus:bg-white transition-all">
+                    </div>
+
+                    <!-- Message Goal -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-textMain block">Briefly state your vision or project goals *</label>
+                        <textarea id="input-message" rows="3" required placeholder="Describe your talent aspirations, upcoming project needs, or sponsorship inquiry..." class="w-full bg-gray-50 border border-softBorder rounded-xl px-4 py-3 text-sm text-textMain focus:outline-none focus:border-flameOrange focus:bg-white transition-all resize-none"></textarea>
+                    </div>
+
+                    <!-- Dynamic Live Message Preview -->
+                    <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 space-y-2">
+                        <div class="flex items-center gap-2 text-xs font-bold text-emerald-700 uppercase tracking-wider">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            <span>Automated WhatsApp Text Preview</span>
+                        </div>
+                        <p id="whatsapp-preview-text" class="text-xs text-emerald-950 font-mono italic leading-relaxed">
+                            Filling the fields above constructs your message...
+                        </p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full py-4 rounded-xl text-center font-black text-xs uppercase tracking-wider flame-btn-primary flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Trigger WhatsApp Application</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- DIRECT CONTACT & LOCATION SECTION -->
+        <section class="grid md:grid-cols-2 gap-8 border-t border-softBorder pt-12">
+            
+            <div class="space-y-4">
+                <span class="text-xs font-extrabold text-flameOrange uppercase tracking-widest">Headquarters & Office</span>
+                <h3 class="font-heading font-black text-2xl text-textMain">Visit Us in Accra</h3>
+                <div class="flex flex-col leading-none">
+                    <span class="font-wordmark uppercase text-xl text-textMain tracking-tight">TALENT EXPOSURE</span>
+                    <span class="font-tagline font-semibold uppercase text-[11px] tracking-[0.38em] text-flameOrange mt-1.5">MULTIMEDIA</span>
+                </div>
+                <p class="text-xs sm:text-sm text-textMuted leading-relaxed">
+                    Adjabeng (Between Cocobod and Kingsway)<br>
+                    Korle Klottey Municipality, Accra, Ghana
+                </p>
+                <div class="pt-2 space-y-2 text-xs font-medium text-textMain">
+                    <p class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-phone text-flameOrange"></i>
+                        <span>0267228277 / 0556603119</span>
+                    </p>
+                    <p class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-envelope text-flameOrange"></i>
+                        <span>Talentexposuremultimedia@gmail.com</span>
+                    </p>
+                    <p class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-envelope text-flameOrange"></i>
+                        <span>daniel.mends86@gmail.com</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Founder & Executive Profile Card -->
+            <div class="card-elevated p-6 rounded-2xl bg-white border border-softBorder space-y-3">
+                <span class="text-[10px] font-bold text-flameOrange uppercase tracking-wider">Executive Leadership</span>
+                <h4 class="font-heading font-extrabold text-lg text-textMain">Daniel Yaw Mends</h4>
+                <p class="text-xs font-semibold text-textMuted">Founder / CEO & Owner-Manager</p>
+                <p class="text-xs text-textMuted leading-relaxed pt-1">
+                    "KOKMA Taskforce Secretary and Personal Assistant to Korle Klottey Youth Organizer. Dedicated to developing grassroots initiatives, tourism development, and empowering local talents."
+                </p>
+                <div class="pt-2 flex items-center gap-3">
+                    <a href="https://wa.me/233556603119" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-700 font-bold text-[11px] hover:bg-emerald-200">
+                        Direct WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-20 border-t border-white/10 py-8 bg-slateNavy text-center text-xs text-slate-300 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 <span class="font-wordmark uppercase tracking-wide text-[13px] text-white">Talent Exposure Multimedia</span>. Registered with RGD Ghana. All rights reserved.</p>
+            <p class="font-medium text-slate-200">Digital Partner: <span class="text-orange-400 font-bold">Fexaris Studio</span></p>
+        </div>
+    </footer>
+
+    <!-- FLYER MODAL -->
+    <div id="flyer-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white p-6 rounded-3xl max-w-md w-full border border-softBorder space-y-4 relative shadow-2xl">
+            <button onclick="closeFlyerModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-textMain hover:bg-gray-200">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-gray-100">
+                <img id="modal-img" src="" alt="Event Poster" class="w-full h-full object-cover">
+            </div>
+
+            <div class="space-y-1">
+                <h3 id="modal-title" class="font-heading font-black text-textMain text-lg"></h3>
+                <p id="modal-desc" class="text-xs text-textMuted leading-relaxed"></p>
+            </div>
+
+            <button onclick="registerForEventModal()" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider flame-btn-primary flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+                <span>Inquire / Register on WhatsApp</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- AOS JS CDN -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize AOS Animate On Scroll Library
+        AOS.init({
+            once: true,
+            offset: 80,
+            duration: 800,
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+        });
+
+        // Mobile Drawer Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Dual Pathway Section Toggle (Aspiring Talent vs Brands)
+        function togglePathway(type) {
+            const btnTalent = document.getElementById('path-talent-btn');
+            const btnBrand = document.getElementById('path-brand-btn');
+            const contentTalent = document.getElementById('pathway-talent-content');
+            const contentBrand = document.getElementById('pathway-brand-content');
+
+            if (type === 'talent') {
+                btnTalent.className = "flex-1 py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 flame-btn-primary";
+                btnBrand.className = "flex-1 py-3 px-4 rounded-lg font-semibold text-xs text-textMuted hover:text-textMain uppercase tracking-wider transition-all flex items-center justify-center gap-2";
+                contentTalent.classList.remove('hidden');
+                contentBrand.classList.add('hidden');
+            } else {
+                btnBrand.className = "flex-1 py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 navy-btn";
+                btnTalent.className = "flex-1 py-3 px-4 rounded-lg font-semibold text-xs text-textMuted hover:text-textMain uppercase tracking-wider transition-all flex items-center justify-center gap-2";
+                contentBrand.classList.remove('hidden');
+                contentTalent.classList.add('hidden');
+            }
+        }
+
+        // WhatsApp Interactive Form Handler & Tab Switcher
+        let activeTab = 'talent';
+
+        function switchTab(type) {
+            activeTab = type;
+            document.getElementById('user-type').value = type;
+
+            const btnTalent = document.getElementById('tab-talent');
+            const btnBrand = document.getElementById('tab-brand');
+            const fieldsTalent = document.getElementById('dynamic-talent-fields');
+            const fieldsBrand = document.getElementById('dynamic-brand-fields');
+            const labelName = document.getElementById('label-name');
+
+            if (type === 'talent') {
+                btnTalent.className = "flex-1 py-3 px-4 rounded-lg font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 flame-btn-primary";
+                btnBrand.className = "flex-1 py-3 px-4 rounded-lg font-semibold text-xs text-textMuted hover:text-textMain uppercase tracking-wider transition-all flex items-center justify-center gap-2";
+                fieldsTalent.classList.remove('hidden');
+                fieldsBrand.classList.add('hidden');
+                labelName.innerText = "Full Name / Stage Name *";
+            } else {
+                btnBrand.className = "flex-1 py-3 px-4 rounded-lg font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 navy-btn";
+                btnTalent.className = "flex-1 py-3 px-4 rounded-lg font-semibold text-xs text-textMuted hover:text-textMain uppercase tracking-wider transition-all flex items-center justify-center gap-2";
+                fieldsBrand.classList.remove('hidden');
+                fieldsTalent.classList.add('hidden');
+                labelName.innerText = "Contact Person Name *";
+            }
+            updateWhatsAppPreview();
+        }
+
+        // Generate Formatted WhatsApp Message
+        function updateWhatsAppPreview() {
+            const name = document.getElementById('input-name').value || '[Your Name]';
+            const phone = document.getElementById('input-phone').value || '[Your Phone]';
+            const location = document.getElementById('input-location').value || '[Your Location]';
+            const message = document.getElementById('input-message').value || '[Your Vision/Details]';
+            const type = activeTab;
+
+            let text = "";
+            if (type === 'talent') {
+                const category = document.getElementById('input-category').value;
+                const portfolio = document.getElementById('input-portfolio').value || 'N/A';
+                text = `Hello Talent Exposure Multimedia! 👋\n\nI am submitting my profile as an *Emerging Creative*:\n\n• *Name/Stage Name:* ${name}\n• *Creative Field:* ${category}\n• *Phone:* ${phone}\n• *Location:* ${location}\n• *Portfolio/Social:* ${portfolio}\n• *Goals/Message:* ${message}\n\nI would love to be discovered and featured!`;
+            } else {
+                const company = document.getElementById('input-company').value || '[Company Name]';
+                const service = document.getElementById('input-service-req').value;
+                text = `Hello Talent Exposure Multimedia! 👋\n\nI am reaching out regarding a *Corporate Project / Partnership*:\n\n• *Contact Person:* ${name}\n• *Company/Org:* ${company}\n• *Service Needed:* ${service}\n• *Phone:* ${phone}\n• *Location:* ${location}\n• *Project Scope:* ${message}\n\nLet's schedule a meeting to discuss!`;
+            }
+
+            document.getElementById('whatsapp-preview-text').innerText = text;
+            return text;
+        }
+
+        // Input Change Listeners for Live Preview
+        const formInputs = ['input-name', 'input-phone', 'input-category', 'input-portfolio', 'input-company', 'input-service-req', 'input-location', 'input-message'];
+        formInputs.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.addEventListener('input', updateWhatsAppPreview);
+                el.addEventListener('change', updateWhatsAppPreview);
+            }
+        });
+
+        // Trigger Direct WhatsApp Chat with Form Data
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const messageText = updateWhatsAppPreview();
+            const encodedText = encodeURIComponent(messageText);
+            const whatsappUrl = `https://wa.me/233556603119?text=${encodedText}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Event Modal Controls
+        let selectedEventTitle = "";
+
+        function openFlyerModal(title, desc, imgSrc) {
+            selectedEventTitle = title;
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('modal-img').src = imgSrc;
+            document.getElementById('flyer-modal').classList.remove('hidden');
+        }
+
+        function closeFlyerModal() {
+            document.getElementById('flyer-modal').classList.add('hidden');
+        }
+
+        function registerForEventModal() {
+            const text = `Hello Talent Exposure Multimedia! 👋\n\nI am interested in participating/sponsoring the *${selectedEventTitle}* initiative.\n\nPlease share registration and partnership details!`;
+            const encoded = encodeURIComponent(text);
+            window.open(`https://wa.me/233556603119?text=${encoded}`, '_blank');
+            closeFlyerModal();
+        }
+
+        // Initial Preview Generation
+        updateWhatsAppPreview();
+    </script>
+</body>
+</html>
